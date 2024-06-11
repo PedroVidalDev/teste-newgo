@@ -23,7 +23,26 @@ public class Menu {
         
         System.out.println("Pontuacao da senha atual: " + senha.verificarForca());
 
-        System.out.println("Deseja alterar a senha: 1) ");
+        String opcao;
+        System.out.println("Deseja alterar a senha: 1) Sim 2) Nao ");
+        opcao = sc.nextLine();
+        if(opcao.equals("1")){
+            System.out.println("Digite a nova senha: ");
+            String novaSenhaString;
+            novaSenhaString = sc.nextLine();
+            SenhaDTO novaSenhaDTO = new SenhaDTO(novaSenhaString);
+
+            Senha novaSenha = service.validarSenha(senhaDTO);
+            senha.setConteudo(novaSenha.getConteudo());
+        }
+
+        if(opcao.equals("2")){
+
+        }
+
+        else{
+            System.out.println("Escolha invalida.");
+        }
 
         sc.close();
     }
