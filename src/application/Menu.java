@@ -32,7 +32,7 @@ public class Menu {
             novaSenhaString = sc.nextLine();
             SenhaDTO novaSenhaDTO = new SenhaDTO(novaSenhaString);
 
-            Senha novaSenha = service.validarSenha(senhaDTO);
+            Senha novaSenha = service.validarSenha(novaSenhaDTO);
             senha.setConteudo(novaSenha.getConteudo());
         }
 
